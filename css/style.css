@@ -19,6 +19,7 @@ body {
 }
 header {
   width: 100%;
+
 }
 main {
   width: 100%;
@@ -47,6 +48,7 @@ main {
 
   position: fixed;
   background-color: rgba(17,17,17,0.7);
+  z-index: 200;
 }
 
 .left-nav {
@@ -148,7 +150,7 @@ main {
   display: grid;
   grid-template-columns:  repeat( 6, minmax(300px, 1fr) );
   grid-template-rows: 1fr;
-  padding: 0 20px;
+  /*padding: 0 20px;*/
   grid-gap: 5px;
   list-style: none;
   margin: 0;
@@ -156,29 +158,34 @@ main {
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(3, 100%);
+  /*grid-template-columns: repeat(3, 100%);*/
   grid-row: 3;
 }
-.category {
-  width: 100%;
 
+.category {
   display: grid;
   /*grid-auto-flow:column;*/
+}
+.category-next {
+  display: none;
+  left: 0;
+}
+.category, .category-next {
+  width: 100%;
   position: relative;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(6, 1fr);
   /*grid-template-columns: repeat(6, calc(50% - 30em));*/
-  grid-template-rows: minmax(15em, 1fr);
-
+  grid-template-rows: minmax(5em, 1fr);
   grid-gap: 5px;
-  overflow-x: hidden;
-  scroll-snap-type: x proximity;
+  overflow: hidden;
   list-style: none;
-  padding: 0 20px;
-  margin: 0 0 0 calc(48px + 8 * ((100vw - 320px) / 880));
-
+  transition: 1s;
+  /*padding: 0 20px;*/
+  /*margin: 0 0 0 calc(48px + 8 * ((100vw - 320px) / 880));*/
 }
 
-.movie-list > *, .category > *{
+
+.movie-list > *, .category > *, .category-next > *{
   padding: 2rem;
   background-color: #333;
   color: white;
@@ -222,42 +229,11 @@ main {
 
 }
 
+
 .small-movie {
-  background-image:
-    linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-    url(../media/images/elite.jpg);
-  background-size: cover;
-  transition: 0.5s;
+  height: 0;
+  padding-top: 56.25%;
 }
-.small-movie:nth-child(1) {
-  background-image:
-    linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-    url(../media/images/thespy.jpg);
-}
-.small-movie:nth-child(2) {
-  background-image:
-    linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-    url(../media/images/orphanblack.jpg);
-}
-
-.small-movie:nth-child(3) {
-  background-image:
-    linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-    url(../media/images/mind_explained.jpg);
-}
-
-.small-movie:nth-child(4) {
-  background-image:
-    linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-    url(../media/images/Unbelievable.jpg);
-}
-
-.small-movie:nth-child(5) {
-  background-image:
-    linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-    url(../media/images/whitegold.jpg);
-}
-
 
 .small-movie a{
  text-decoration: none;
@@ -271,10 +247,21 @@ main {
   z-index: 10;
 
 }
-/*#section1, #section2, #section3 {*/
-/*  width: 100%;*/
-/*  position: relative;*/
-/*}*/
+#section1, #section2, #section3 {
+  margin-bottom: 2em;
+}
+
+.categories div {
+  display:flex;
+  flex-direction: column;
+}
+.show {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
 .arrows {
 
   position: relative;
@@ -283,22 +270,19 @@ main {
   font-size: 6em;
   background: rgb(0, 0, 0);
   width: 80px;
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
   z-index: 15;
 }
-.arrows:nth-of-type(1) {
-  top:30%;
-  bottom:0;
-  left:0;
+.show .arrows:first-child {
   background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  left: 2.67%;
 }
-.arrows:nth-of-type(2) {
-   bottom:39%;
-
-  left: 99%;
+.show .arrows:last-child {
    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  right: 2.67%;
  }
+
 
 .movie-buttons {
   display: flex;
@@ -350,6 +334,53 @@ main {
 }
 
 
+.advertisement {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  background-image:
+          linear-gradient(to top, rgba(17,17,17,1), rgba(17,17,17,0.7), rgba(17,17,17,1)),
+          url(../media/images/billgates.jpeg);
+}
+.main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+}
+.main-image img {
+  width: 75%;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  color: white;
+}
+.main-info h2:first-child {
+  font-size: 4em;
+  margin-bottom: .5em;
+}
+.main-info h2:last-child {
+  font-size: 2em;
+}
+.main-info .movie-buttons {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+}
+.main-info .movie-button {
+  margin: 0 0.5em;
+}
+.main-info .movie-description {
+  width: 70%;
+}
+
 @media screen and (min-width: 40em) {
   .left-nav {
     grid-column: 2;
@@ -367,9 +398,7 @@ main {
     grid-row: 4;
 
   }
-  .category {
-    margin-bottom: 2em;
-  }
+
   .highlight {
     grid-column: 1 / -1;
     grid-row: span 3;
@@ -378,9 +407,12 @@ main {
   .small-movie {
     transform: scale(1);
   }
+
+
   .movie-description {
     max-width: 35%;
   }
+
 
 
 }
@@ -389,4 +421,80 @@ main {
   .movie-wrapper {
     margin-left: 1rem;
   }
+}
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@IMAGES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/*NIEUWE RELEASES*/
+#section1 .category .small-movie {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/elite.jpg);
+  background-size: cover;
+  transition: 0.5s;
+
+}
+#section1 .category .small-movie:nth-child(1) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/thespy.jpg);
+}
+#section1 .category .small-movie:nth-child(2) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/orphanblack.jpg);
+}
+
+#section1 .category .small-movie:nth-child(3) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/mind_explained.jpg);
+}
+
+#section1 .category .small-movie:nth-child(4) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/Unbelievable.jpg);
+}
+
+#section1 .category .small-movie:nth-child(5) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/whitegold.jpg);
+}
+/* Next Row */
+#section1 .category-next .small-movie {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/thespy.jpg);
+  background-size: cover;
+  transition: 0.5s;
+}
+#section1 .category-next .small-movie:nth-child(1) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/elite.jpg);
+}
+#section1 .category-next .small-movie:nth-child(2) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/mind_explained.jpg);
+}
+
+#section1 .category-next .small-movie:nth-child(3) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/whitegold.jpg);
+}
+
+#section1 .category-next .small-movie:nth-child(4) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/Unbelievable.jpg);
+}
+
+#section1 .category-next .small-movie:nth-child(5) {
+  background-image:
+          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
+          url(../media/images/orphanblack.jpg);
 }

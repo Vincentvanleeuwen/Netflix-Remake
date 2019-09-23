@@ -1,46 +1,34 @@
-let nav = document.getElementById('main-nav');
-let navItems = document.getElementsByClassName('nav-item');
-let toggle = document.getElementById('toggle');
-console.log(navItems);
-let hasClass = (element, className) => {
-  return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
-}
+let prev = document.getElementById("new-prev");
+let next = document.getElementById("new-next");
+let sectionOne = document.getElementById("section1");
 
-if(nav) {
-  toggle.addEventListener('click',  () => {
-    // let current = document.getElementsByClassName("active-menu");
-
-    for(let i = 0; i < navItems.length; i++) {
-
-      if(hasClass(navItems[i], 'active-menu')) {
-        setTimeout(() => {
-          navItems[i].classList.toggle('active-menu');
-          navItems[i].classList.toggle('leave-animation');
-        }, 800);
-
-          navItems[2].classList.toggle('leave-animation');
-
-          setTimeout(() => {
-            navItems[1].classList.toggle('leave-animation');
-            setTimeout(() => {
-              navItems[0].classList.toggle('leave-animation');
-            }, 100)
-          }, 100)
+next.addEventListener("click", () => {
+  sectionOne.getElementsByClassName("category")[0].style.left = "-1375px";
+  sectionOne.getElementsByClassName("category-next")[0].style.display = "grid";
+  document.getElementsByClassName("show")[0].style.width = "200vw";
 
 
-      }
-      else {
-        navItems[0].classList.toggle('active-menu');
+  setTimeout(() => {
+    sectionOne.getElementsByClassName("category")[0].style.display = "none";
+    sectionOne.getElementsByClassName("category-next")[0].style.left = "0";
+    document.getElementsByClassName("show")[0].style.width = "100vw";
 
-        setTimeout( () => {
-          navItems[1].classList.toggle('active-menu');
-          setTimeout( () => {
-            navItems[2].classList.toggle('active-menu');
-          }, 200)
-        }, 100)
-      }
+  }, 500);
 
-    }
-  });
-}
 
+
+
+});
+
+prev.addEventListener("click", () => {
+  sectionOne.getElementsByClassName("category")[0].style.display = "grid";
+  sectionOne.getElementsByClassName("category-next")[0].style.left = "1375px";
+  document.getElementsByClassName("show")[0].style.width = "200vw";
+
+  setTimeout(() => {
+    sectionOne.getElementsByClassName("category-next")[0].style.display = "none";
+    sectionOne.getElementsByClassName("category")[0].style.left = "0";
+    document.getElementsByClassName("show")[0].style.width = "100vw";
+  }, 100);
+
+});
