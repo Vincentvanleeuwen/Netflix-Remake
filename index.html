@@ -16,11 +16,14 @@
 </head>
 <body>
 <header>
+    <!--Navigation-->
     <nav class="main-nav">
         <a href="#" class="logo-position">
             <img class="logo"
-                 src="./media/images/Logo.png">
+                 src="./media/images/Logo.png"
+                 alt="Netflix">
         </a>
+        <!--Small screen Navigation-->
         <ul class="small-nav">
             <li class="dropdown-activator">
                 <a href="">
@@ -29,6 +32,7 @@
                 </a>
             </li>
         </ul>
+        <!--Dropdown-->
         <ul class="dropdown">
             <li>
                 <a href=""> Homepagina </a>
@@ -64,9 +68,7 @@
                 <a href=""> Mijn lijst </a>
             </li>
         </ul>
-        <!--      <span id="toggle">-->
-        <!--          <i class="material-icons"> menu </i>-->
-        <!--      </span>-->
+
         <ul class="right-nav">
             <li class="nav-item">
                 <a href=""> <i class="material-icons"> search </i> </a>
@@ -93,115 +95,121 @@
     </nav>
 </header>
 <main>
-    <section class="movies">
-        <ul class="movie-list">
+    <!--Show Container-->
+    <section class="shows">
+        <!--Highlighted show-->
+        <ul class="highlighted-show">
             <li class="highlight">
-                <article class="movie-wrapper">
-                    <h1 class="movie-heading">Peaky Blinders</h1>
-                    <section class="movie-buttons">
-                        <a href="#" class="movie-button"><i class="material-icons"> play_arrow </i> Afspelen </a>
-                        <a href="#" class="movie-button"><i class="material-icons"> add </i> Mijn lijst </a>
-                        <a href="#" class="movie-button"><i class="material-icons"> info </i> Meer informatie </a>
+                <article class="show-wrapper">
+                    <h1 class="show-heading">Peaky Blinders</h1>
+                    <section class="show-buttons">
+                        <a href="#" class="show-button"><i class="material-icons"> play_arrow </i> Afspelen </a>
+                        <a href="#" class="show-button"><i class="material-icons"> add </i> Mijn lijst </a>
+                        <a href="#" class="show-button"><i class="material-icons"> info </i> Meer informatie </a>
                     </section>
-                    <h2 class="movie-season">Kijk nu seizoen 5</h2>
-                    <p class="movie-description">A notorious gang in 1919 Birmingham, England, is led by the fierce
+                    <h2 class="show-season">Kijk nu seizoen 5</h2>
+                    <p class="show-description">A notorious gang in 1919 Birmingham, England, is led by the fierce
                         Tommy Shelby, a crime boss set on
                         moving up in the world no matter the cost.</p>
                 </article>
             </li>
         </ul>
+        <!--Categories container-->
         <section class="categories">
+
             <section id="section1">
                 <h2 class="category-header">Nieuwe releases</h2>
                 <section class="show">
-
                     <a href="javascript:void(0)" class="arrows" id="new-prev">‹</a>
+                    <!--List of Shows-->
                     <ul class="category">
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Spy</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Spy</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Orphan Black</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Orphan Black</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Mind Explained</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Mind Explained</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Unbelievable</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Unbelievable</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">White Gold</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">White Gold</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Elite</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Elite</h1>
                                 </article>
                             </a>
 
                         </li>
                     </ul>
+                    <!--Onscroll show next series of shows-->
                     <ul class="category-next">
-                        <li class="small-movie">
+                        <!--List of Shows-->
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Elite</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Elite</h1>
                                 </article>
                             </a>
 
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Mind Explained</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Mind Explained</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">White Gold</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">White Gold</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Unbelievable</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Unbelievable</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Orphan Black</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Orphan Black</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Spy</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Spy</h1>
                                 </article>
                             </a>
                         </li>
@@ -214,94 +222,96 @@
             <section id="section2">
                 <h2 class="category-header">Populair op Netflix</h2>
                 <section class="show">
-
                     <a href="javascript:void(0)" class="arrows" id="new-prev2">‹</a>
                     <ul class="category">
-                        <li class="small-movie">
+                        <!--List of Shows-->
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Spy</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Spy</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Orphan Black</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Orphan Black</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Mind Explained</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Mind Explained</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Unbelievable</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Unbelievable</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">White Gold</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">White Gold</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Elite</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Elite</h1>
                                 </article>
                             </a>
 
                         </li>
                     </ul>
+                    <!--Onscroll show next series of shows-->
                     <ul class="category-next">
-                        <li class="small-movie">
+                        <!--List of Shows-->
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Elite</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Elite</h1>
                                 </article>
                             </a>
 
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Mind Explained</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Mind Explained</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">White Gold</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">White Gold</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Unbelievable</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Unbelievable</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Orphan Black</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Orphan Black</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Spy</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Spy</h1>
                                 </article>
                             </a>
                         </li>
@@ -314,94 +324,96 @@
             <section id="section3">
                 <h2 class="category-header">Trendy </h2>
                 <section class="show">
-
                     <a href="javascript:void(0)" class="arrows" id="new-prev3">‹</a>
                     <ul class="category">
-                        <li class="small-movie">
+                        <!--List of Shows-->
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Spy</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Spy</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Orphan Black</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Orphan Black</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Mind Explained</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Mind Explained</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Unbelievable</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Unbelievable</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">White Gold</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">White Gold</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Elite</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Elite</h1>
                                 </article>
                             </a>
 
                         </li>
                     </ul>
+                    <!--Onscroll show next series of shows-->
                     <ul class="category-next">
-                        <li class="small-movie">
+                        <!--List of Shows-->
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Elite</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Elite</h1>
                                 </article>
                             </a>
 
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Mind Explained</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Mind Explained</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">White Gold</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">White Gold</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Unbelievable</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Unbelievable</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">Orphan Black</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">Orphan Black</h1>
                                 </article>
                             </a>
                         </li>
-                        <li class="small-movie">
+                        <li class="small-show">
                             <a href="#">
-                                <article class="movie-wrapper">
-                                    <h1 class="movie-heading small">The Spy</h1>
+                                <article class="show-wrapper">
+                                    <h1 class="show-heading small">The Spy</h1>
                                 </article>
                             </a>
                         </li>
@@ -410,19 +422,20 @@
 
                 </section>
             </section>
+            <!--Smaller Highlighted Show-->
             <section class="advertisement">
                 <section class="main-image">
                     <img src="media/images/billgates.jpeg" alt="Inside Bill's Brain">
                 </section>
                 <section class="main-info">
                     <h2> Inside Bill's Brain</h2>
-                    <section class="movie-buttons">
-                        <a href="#" class="movie-button"><i class="material-icons"> play_arrow </i> Afspelen </a>
-                        <a href="#" class="movie-button"><i class="material-icons"> add </i> Mijn lijst </a>
-                        <a href="#" class="movie-button"><i class="material-icons"> info </i> Meer informatie </a>
+                    <section class="show-buttons">
+                        <a href="#" class="show-button"><i class="material-icons"> play_arrow </i> Afspelen </a>
+                        <a href="#" class="show-button"><i class="material-icons"> add </i> Mijn lijst </a>
+                        <a href="#" class="show-button"><i class="material-icons"> info </i> Meer informatie </a>
                     </section>
-                    <h2 class="movie-season">Kijk nu de miniserie </h2>
-                    <p class="movie-description">Kan technologie onze planeet en zijn mijarden bewoners redden? Bill
+                    <h2 class="show-season">Kijk nu de miniserie </h2>
+                    <p class="show-description">Kan technologie onze planeet en zijn mijarden bewoners redden? Bill
                         Gates heeft alles berekend en denkt van wel</p>
                 </section>
             </section>

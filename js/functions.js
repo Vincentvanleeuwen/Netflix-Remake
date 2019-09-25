@@ -38,11 +38,26 @@ function prevAll(element) {
         result.push(element);
     return result;
 }
+function nextAll(elem, filter) {
+    let sibs = [];
+    let nextElem = elem.parentNode.firstChild;
+    do {
+        if (nextElem.nodeType === 3) continue; // ignore text nodes
+        if (nextElem === elem) continue; // ignore elem of target
+        if (nextElem === elem.nextElementSibling) {
+            if (!filter || filter(elem)) {
+                sibs.push(nextElem);
+                elem = nextElem;
+            }
+        }
+    } while(nextElem === nextElem.nextSibling);
+    return sibs;
+}
 document.ready = () => {
     let show = document.getElementsByClassName('.small-movie');
 
     show.addEventListener('mouseenter', function () {
-        // this.nextAll().classList.add('has-positive-translate');
+        this.nextAll().classList.add('has-positive-translate');
         this.prevAll().classList.add('has-negative-translate');
 
     }).addEventListener('mouseleave', function () {
