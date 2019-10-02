@@ -1,0 +1,51 @@
+@keyframes animate-netflix-hover {
+  15% {
+    stroke: #fff;
+  }
+  /*35% {
+      fill: transparent;
+  }*/
+  50% {
+    stroke-dashoffset: 0;
+    stroke-width: var(--stroke-width);
+  }
+
+  75% {
+    fill: transparent;
+
+
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #d81f26;
+    fill: #ab1d1f;
+
+  }
+}
+
+@keyframes animate-netflix {
+  15% {
+
+    stroke: #d81f26;
+  }
+  25% {
+    stroke-width: var(--stroke-width);
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+
+  95% {
+    stroke: #d81f26;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #d81f26;
+    fill: #d81f26;
+
+
+  }
+}

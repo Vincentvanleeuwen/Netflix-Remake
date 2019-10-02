@@ -125,59 +125,6 @@ main {
 }
 
 
-@keyframes animate-netflix-hover {
-  15% {
-    stroke: #fff;
-  }
-  /*35% {
-      fill: transparent;
-  }*/
-  50% {
-    stroke-dashoffset: 0;
-    stroke-width: var(--stroke-width);
-  }
-
-  75% {
-    fill: transparent;
-
-
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-    stroke: #d81f26;
-    fill: #ab1d1f;
-
-  }
-}
-
-@keyframes animate-netflix {
-  15% {
-
-    stroke: #d81f26;
-  }
-  25% {
-    stroke-width: var(--stroke-width);
-  }
-
-  50% {
-    stroke-dashoffset: 0;
-    fill: transparent;
-  }
-
-  95% {
-    stroke: #d81f26;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    stroke: #d81f26;
-    fill: #d81f26;
-
-
-  }
-}
-
-
 .main-nav ul li {
   color: white;
   font-family: var(--main-font);
@@ -232,7 +179,7 @@ main {
 }
 
 /*Main Content*/
-.shows {
+.shows-container {
   display: grid;
   grid-template-rows: repeat(4, 25vh);
 }
@@ -391,17 +338,109 @@ input[type="checkbox"] {
   margin-bottom: 2em;
 }
 
-.categories div {
-  display:flex;
+
+#shows {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  perspective: 20em;
+  overflow: hidden;
+}
+.show-card {
+  opacity: 1;
+  position: relative;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 0.5fr;
+  grid-row-gap: 1em;
+  height: 35em;
+  width: 25em;
+  border-radius: 3%;
+  box-shadow: 0 50px 40px rgba(0,0,0,0.5);
+  transform: rotateY(10deg);
+  transition: 1s;
+}
+.show-card-header {
+  grid-column: span 2;
+  font-size: calc(2.5vw + 8 * ((100vw - 320px) / 880));
+  text-align: center;
+  padding-top: 1em;
+}
+.show-card-description {
+  grid-column: span 2;
+  max-width: 90%;
+  padding-left: 2em;
+}
+.show-card-age {
+  grid-row: 4;
+  background-color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  color: black!important;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  line-height: 2em;
+  margin-left: 2em;
+  margin-top: 2em;
+}
+.show-card-genres {
+  display: flex;
   flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  padding-left: 2em;
 }
-.show {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
+.show-card-genres h4 {
+  border-bottom: solid black 2px;
+  width: max-content;
 }
+.show-card-genres-list {
+  list-style-type: none;
+}
+.show-card-genre a{
+  color: white;
+  text-decoration: none;
+  line-height: 2em;
+}
+
+.show-card-creators {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  padding-left: 2em;
+}
+.show-card-creators h4 {
+  border-bottom: solid black 2px;
+
+}
+.show-card-creator-list {
+  list-style-type: none;
+}
+.show-card-seasons {
+  padding-top: 2em;
+  margin: 0 auto;
+}
+.show-card img {
+  position:absolute;
+  z-index:0;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 3%;
+
+
+}
+.show-card > * {
+  z-index: 1;
+  color: white;
+}
+
+.show-card:hover ~ .show-card{
+  opacity: 0;
+}
+
 .arrows {
 
   position: relative;
@@ -415,11 +454,11 @@ input[type="checkbox"] {
   z-index: 15;
   cursor: pointer;
 }
-.show .arrows:first-child {
+#shows .arrows:first-child {
   background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
   left: 2.67%;
 }
-.show .arrows:last-child {
+#shows .arrows:last-child {
    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
   right: 2.67%;
  }
