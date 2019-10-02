@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="336d03cc-8fa8-48a4-852f-4918b88cb4a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/functions.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -15,81 +16,75 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Netflix-Remake" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2123">
-              <caret line="135" column="65" selection-start-line="135" selection-start-column="60" selection-end-line="135" selection-end-column="65" />
-              <folding>
-                <element signature="n#li#0;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#2;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#3;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#4;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#5;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#2;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#2;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#3;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#4;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#5;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#0;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#1;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#2;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#3;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#4;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#5;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#1;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#2;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#3;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#4;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#5;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#0;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#1;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#2;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#3;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#4;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#5;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#0;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#1;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#2;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#3;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#4;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#li#5;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1399">
-              <caret line="444" column="17" lean-forward="true" selection-start-line="444" selection-start-column="17" selection-end-line="444" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="404">
+                  <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+                  <folding>
+                    <element signature="n#ul#0;n#section#0;n#section#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#ul#1;n#section#0;n#section#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/functions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/css/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="96">
+                  <caret line="148" column="11" selection-start-line="148" selection-start-column="11" selection-end-line="148" selection-end-column="11" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/functions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-192">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>category</find>
       <find>section</find>
       <find>movie-list</find>
       <find>scale</find>
       <find>movies</find>
       <find>small</find>
       <find>movie</find>
+      <find>category</find>
+      <find>arrows</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -103,9 +98,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/js/functions.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/functions.js" />
       </list>
     </option>
   </component>
@@ -119,9 +114,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="240" />
-    <option name="y" value="130" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="252" />
+    <option name="y" value="267" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
   </component>
@@ -130,6 +125,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,7 +147,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -161,6 +156,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -184,12 +180,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569233310432</updated>
-      <workItem from="1569233311901" duration="22787000" />
+      <workItem from="1569233311901" duration="23386000" />
+      <workItem from="1569493358216" duration="4607000" />
+      <workItem from="1569924076105" duration="1277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22787000" />
+    <option name="totallyTimeSpent" value="29270000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -201,16 +199,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="252" y="267" width="1440" height="780" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50052685" side_tool="true" weight="0.32998884" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49944258" visible="true" weight="0.33808845" />
+      <window_info id="Structure" order="1" sideWeight="0.5005574" side_tool="true" weight="0.24973656" />
+      <window_info id="Favorites" order="2" sideWeight="0.5005574" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -218,6 +212,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947312" weight="0.32998884" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -227,59 +225,30 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1399">
-          <caret line="444" column="17" lean-forward="true" selection-start-line="444" selection-start-column="17" selection-end-line="444" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        <state relative-caret-position="-192">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2123">
-          <caret line="135" column="65" selection-start-line="135" selection-start-column="60" selection-end-line="135" selection-end-column="65" />
+        <state relative-caret-position="404">
+          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
           <folding>
-            <element signature="n#li#0;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#2;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#3;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#4;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#5;n#ul#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#2;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#2;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#3;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#4;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#5;n#ul#1;n#section#0;n#div#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#0;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#1;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#2;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#3;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#4;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#5;n#ul#0;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#1;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#2;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#3;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#4;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#5;n#ul#1;n#section#0;n#div#1;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#0;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#1;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#2;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#3;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#4;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#5;n#ul#0;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#0;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#1;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#2;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#3;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#4;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#li#5;n#ul#1;n#section#0;n#div#2;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#ul#0;n#section#0;n#section#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#ul#1;n#section#0;n#section#0;n#section#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="148" column="11" selection-start-line="148" selection-start-column="11" selection-end-line="148" selection-end-column="11" />
         </state>
       </provider>
     </entry>

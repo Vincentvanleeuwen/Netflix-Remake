@@ -1,5 +1,7 @@
 :root {
   --main-font: Roboto, sans-serif;
+  --stroke-width: 10px;
+  --color: #000
 }
 * {
   margin: 0;
@@ -83,6 +85,98 @@ main {
   cursor: pointer;
 
 }
+.morph {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 25px;
+  cursor: pointer;
+
+
+}
+
+
+.icon {
+  width: 50%;
+
+}
+
+.morph path {
+  fill: transparent;
+  stroke: var(--color);
+  stroke-width: var(--stroke-width);
+  stroke-dasharray: 3000;
+  stroke-dashoffset: -3000;
+  animation: animate-netflix 4s forwards;
+
+}
+
+.morph:hover path {
+
+  fill: #d81f26;
+  stroke: #fff;
+  stroke-width: var(--stroke-width);
+  stroke-dasharray: 3000;
+  stroke-dashoffset: -3000;
+  animation: animate-netflix-hover 3s forwards
+
+}
+
+
+@keyframes animate-netflix-hover {
+  15% {
+    stroke: #fff;
+  }
+  /*35% {
+      fill: transparent;
+  }*/
+  50% {
+    stroke-dashoffset: 0;
+    stroke-width: var(--stroke-width);
+  }
+
+  75% {
+    fill: transparent;
+
+
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #d81f26;
+    fill: #ab1d1f;
+
+  }
+}
+
+@keyframes animate-netflix {
+  15% {
+
+    stroke: #d81f26;
+  }
+  25% {
+    stroke-width: var(--stroke-width);
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+
+  95% {
+    stroke: #d81f26;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #d81f26;
+    fill: #d81f26;
+
+
+  }
+}
+
 
 .main-nav ul li {
   color: white;
@@ -160,7 +254,9 @@ main {
 }
 .category-next {
   display: none;
-  left: 0;
+  opacity: 0;
+  left: 100vw;
+  transition: 1s;
 }
 .category, .category-next {
   width: 100%;
@@ -172,6 +268,33 @@ main {
   list-style: none;
   transition: 1s;
 
+}
+input[type="checkbox"] {
+  display: none;
+  position: absolute;
+  left: 50vw;
+}
+#next-arrow:checked ~ .category {
+  /*display: none;*/
+  left: -100vw;
+  transition: 1s;
+}
+#next-arrow:checked ~ .category-next {
+  /*display: grid;*/
+  left: 0;
+  opacity: 1;
+  transition: 1s;
+}
+
+#prev-arrow:checked ~ .category-next {
+  /*display: none;*/
+  left: 100vw;
+  transition: 1s;
+}
+#prev-arrow:checked ~ .category {
+  /*display: grid;*/
+  left: 0;
+  transition: 1s;
 }
 
 /*Add padding for content within highlighted show*/
@@ -290,6 +413,7 @@ main {
   padding: 30px 20px;
   text-align: center;
   z-index: 15;
+  cursor: pointer;
 }
 .show .arrows:first-child {
   background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
