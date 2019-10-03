@@ -49,3 +49,8 @@
 
   }
 }
+
+@keyframes rotate-y {
+  from {transform: rotateY(10deg) scale(1);}
+  to {transform: rotateY(0deg) scale(1.5)}
+}

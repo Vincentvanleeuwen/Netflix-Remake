@@ -340,12 +340,17 @@ input[type="checkbox"] {
 
 
 #shows {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  /*grid-template-columns: repeat(7, 1fr);*/
+  justify-content: center;
+  align-items: start;
   perspective: 20em;
   overflow: hidden;
+  padding: 10em 0;
 }
 .show-card {
+  /*grid-column: span 1;*/
+  flex: 1;
   opacity: 1;
   position: relative;
   background: transparent;
@@ -353,23 +358,31 @@ input[type="checkbox"] {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 0.5fr;
   grid-row-gap: 1em;
-  height: 35em;
-  width: 25em;
+  height: 100%;
+  width: 100%;
   border-radius: 3%;
   box-shadow: 0 50px 40px rgba(0,0,0,0.5);
-  transform: rotateY(10deg);
-  transition: 1s;
+  transform: rotatey(10deg);
+  /*transform: rotate3d(-3, 9, -4, 20deg);*/
+  transition : all .28s ease-out;
+ 
 }
+
+
 .show-card-header {
+  padding: 1em 0 0 1em;
   grid-column: span 2;
-  font-size: calc(2.5vw + 8 * ((100vw - 320px) / 880));
-  text-align: center;
-  padding-top: 1em;
+  font-size: calc(1.5vw + 8 * ((100vw - 320px) / 880));
+  text-align: left;
+  text-shadow: 2px 2px 2px rgba(229,9,20,1);
+
 }
 .show-card-description {
   grid-column: span 2;
   max-width: 90%;
   padding-left: 2em;
+  font-size: calc(.1vw + 8 * ((100vw - 320px) / 880));
+  text-shadow: 2px 2px 2px rgba(229,9,20,1);
 }
 .show-card-age {
   grid-row: 4;
@@ -390,9 +403,11 @@ input[type="checkbox"] {
   justify-content: end;
   align-items: start;
   padding-left: 2em;
+  font-size: 0.6em;
+  background-color: rgba(0,0,0,0.6);
 }
 .show-card-genres h4 {
-  border-bottom: solid black 2px;
+  border-bottom: solid rgba(229,9,20,1) 2px;
   width: max-content;
 }
 .show-card-genres-list {
@@ -410,16 +425,19 @@ input[type="checkbox"] {
   justify-content: end;
   align-items: start;
   padding-left: 2em;
+  background-color: rgba(0,0,0,0.6);
 }
 .show-card-creators h4 {
-  border-bottom: solid black 2px;
+  border-bottom: solid rgba(229,9,20,1) 2px;
+  font-size: .5em;
+  width: max-content;
 
 }
 .show-card-creator-list {
   list-style-type: none;
 }
 .show-card-seasons {
-  padding-top: 2em;
+  padding: 2em 0;
   margin: 0 auto;
 }
 .show-card img {
@@ -437,8 +455,15 @@ input[type="checkbox"] {
   color: white;
 }
 
-.show-card:hover ~ .show-card{
-  opacity: 0;
+.show-card:hover {
+  flex: 2;
+
+  animation: rotate-y 1s forwards;
+
+  z-index: 10;
+}
+.show-card:hover ~ .show-card:last-child {
+  /*display: none;*/
 }
 
 .arrows {

@@ -83,7 +83,7 @@ console.log("hello?");
 loadShows = () => {
     console.log(showArray.shows.length);
     let showAmount = showArray.shows;
-    for(let i = 0; i < showAmount.length; i++) {
+    for(let i = 0; i < showAmount.length - 1; i++) {
 
         // Creating all elements
 
@@ -112,7 +112,7 @@ loadShows = () => {
         genresHeader.appendChild(genresHeaderText);
 
         let genresList = document.createElement("ul");
-        genresList.classList.add("show-card-genre-list");
+        genresList.classList.add("show-card-genres-list");
 
         let showGenres = showAmount[i].genres;
         for(x = 0; x < showGenres.length; x++) {
@@ -139,7 +139,7 @@ loadShows = () => {
         creators.classList.add("show-card-creators");
 
         let creatorHeader = document.createElement("h4");
-        let creatorHeaderText = document.createTextNode("Gemaakt door");
+        let creatorHeaderText = document.createTextNode("Director");
         creatorHeader.appendChild(creatorHeaderText);
 
         let creatorList = document.createElement("ul");
