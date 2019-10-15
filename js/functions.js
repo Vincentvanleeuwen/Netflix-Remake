@@ -95,6 +95,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
           let container = document.createElement("div");
           container.classList.add("show-card");
           container.tabIndex = 0;
+
           container.title = showAmount[i].url;
 
           let img = document.createElement("img");
@@ -206,6 +207,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     singleShow[i].transition = "all 5s cubic-bezier(.22,.04,.59,1.73)";
     singleShow[i].addEventListener('click', () => {
       singleShow[i].classList.add('slide-out');
+
       setTimeout(() => {
         window.location.href = singleShow[i].title;
       }, 1000);
