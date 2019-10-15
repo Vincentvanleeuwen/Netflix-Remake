@@ -85,16 +85,9 @@ main {
   cursor: pointer;
 
 }
+/* Disable logo on mobile */
 .morph {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  padding: 25px;
-  cursor: pointer;
-
-
+  display: none;
 }
 
 
@@ -146,36 +139,49 @@ main {
   font-weight: bold;
 }
 
-/*Navigation dropdown*/
-.dropdown {
+/*Navigation dropdowns*/
+.dropdown, .profile-dropdown {
   display: none;
 
   position: absolute;
-  top: 80%;
-  left: 20%;
-  background-color: rgba(0,0,0,0.8);
+  top: 3.1em;
+  padding: 1em .5em;
+  background-color: rgba(0,0,0,0.9);
+
+  /* http://animista.net/play/basic/shadow-pop */
+  animation: move-out 0.3s cubic-bezier(.22,.04,.59,1.73) both;
 
 }
-.dropdown a {
+.dropdown a, .profile-dropdown a  {
   color: white;
   z-index: 1;
 }
-.dropdown-activator a {
+.dropdown a:focus, .profile-dropdown a:focus {
+  border-bottom: 3px solid white;
+}
+.dropdown-activator a, .profile-dropdown-activator a {
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: row;
-  margin-left: 10px;
+  padding: .5em 1em;
   font-weight: bold;
 }
 
-.small-nav:hover .dropdown {
+
+.small-nav:hover .dropdown, .profile-dropdown-activator:hover .profile-dropdown {
   display: block;
   /*position: absolute;*/
 }
 
-.dropdown a:hover {
+.dropdown a:hover, .profile-dropdown a:hover {
   background-color: #ddd;
+  color: black;
+}
+
+
+nav li:hover ul, li:focus-within ul {
+  display: initial
 }
 
 /*Main Content*/
@@ -351,7 +357,6 @@ input[type="checkbox"] {
 }
 
 .show-card {
-  /*grid-column: span 1;*/
   flex: 1;
   opacity: 1;
   position: relative;
@@ -360,15 +365,14 @@ input[type="checkbox"] {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 0.5fr;
   grid-row-gap: 1em;
-  height: 100%;
+  height: 28em;
   width: 100%;
   border-radius: 3%;
   box-shadow: 0 50px 40px rgba(0,0,0,0.5);
   transform: rotateY(0deg);
-  /*transform: rotate3d(-3, 9, -4, 20deg);*/
   transition : all .28s ease-out;
   margin: 1em 2em;
- 
+  cursor: pointer;
 }
 
 
@@ -403,7 +407,7 @@ input[type="checkbox"] {
 .show-card-genres {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   align-items: start;
   padding-left: 2em;
   font-size: 0.6em;
@@ -421,11 +425,14 @@ input[type="checkbox"] {
   text-decoration: none;
   line-height: 2em;
 }
+.show-card-genre a:hover {
+  border-bottom: white solid 3px;
+}
 
 .show-card-creators {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   align-items: start;
   padding-left: 2em;
   background-color: rgba(0,0,0,0.6);
@@ -458,11 +465,20 @@ input[type="checkbox"] {
   color: white;
 }
 
-.show-card:hover {
+.show-card:hover, .show-card:focus {
   flex: 2;
   box-shadow: 1px 1px 1px black;
   z-index: 10;
+
 }
+
+.slide-out {
+  /*animation: slide-out 1s cubic-bezier(.22,.04,.59,1.73) forwards;*/
+  margin: 0 0 0 0!important;
+  animation: slide-out 2s cubic-bezier(.22,.04,.59,1.73)!important;
+
+}
+
 
 .arrows {
 
@@ -584,6 +600,167 @@ input[type="checkbox"] {
   width: 70%;
 }
 
+/*@@@@@@@@@@@@@@@@@@@@ Start Detail page @@@@@@@@@@@@@@@@@@@@@@*/
+
+.fullscreen-video {
+  position: fixed;
+  right: 0;
+
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  animation: slide-in 1s cubic-bezier(0,.67,.38,1.01) forwards;
+}
+
+/*############## Contact Page ################*/
+.contact-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.contact-form {
+  margin-top: 8em;
+  padding: 0 1em;
+}
+.contact-form h1 {
+  color: white;
+  margin-bottom: 2em;
+}
+.contact-form form {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: start;
+  color: white;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: .5em 1em;
+  margin-bottom: 2em;
+  background-color: inherit;
+  box-shadow:         inset 0 0 10px #000000;
+  color: white;
+  border: 1px solid rgba(229,9,20,1);
+  border-radius: 5px;
+}
+.contact-form input[type="tel"] {
+  width: 50%;
+}
+/*https://webagility.com/posts/the-ultimate-list-of-hacks-for-chromes-forced-yellow-background-on-autocompleted-inputs*/
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus,
+.contact-form textarea:-webkit-autofill,
+.contact-form textarea:-webkit-autofill:hover,
+.contact-form textarea:-webkit-autofill:focus,
+.contact-form select:-webkit-autofill,
+.contact-form select:-webkit-autofill:hover,
+.contact-form select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 100px #6FB07F inset;
+  -webkit-text-fill-color: white;
+}
+.contact-form label {
+  margin-bottom: .5em;
+  width: 100%;
+}
+label[for="onderwerp"] {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form select {
+  width: 50%;
+  padding: .5em 1em;
+  background-color: inherit;
+  box-shadow:         inset 0 0 10px #000000;
+  color: white;
+  border: 1px solid rgba(229,9,20,1);
+  border-radius: 5px;
+}
+
+.contact-form option {
+  color: black;
+}
+
+.contact-form option:disabled {
+  color: grey;
+}
+.contact-form textarea {
+  width: 100%;
+  padding: .5em 1em;
+  margin-bottom: 2em;
+  background-color: inherit;
+  box-shadow:         inset 0 0 10px #000000;
+  color: white;
+  border: 1px solid rgba(229,9,20,1);
+  border-radius: 5px;
+  resize: none;
+}
+
+.contact-form input[type="submit"] {
+  background-color: rgba(229,9,20,1);
+  box-shadow: none;
+  font-weight: bold;
+}
+.contact-form input[type="submit"]:valid {
+  /*background-color: #4a6740;*/
+  border: none;
+}
+.contact-form input:valid,
+.contact-form select:valid,
+.contact-form textarea:valid {
+  border: 3px solid #4a6740
+}
+
+.contact-form-name,
+.contact-form-email,
+.contact-form-phone,
+.contact-form-subject{
+  border: none;
+  width: 100%;
+}
+
+.check{
+  position:relative;
+  height: 2em;
+  right: 5em;
+  bottom: 2em;
+  z-index: -1;
+}
+
+.check polygon {
+  display:none;
+}
+
+#name:valid ~ .check polygon,
+#email:valid ~ .check polygon,
+#phone:valid ~ .check polygon,
+#onderwerp:valid ~ .check polygon {
+  display: block;
+  fill: transparent;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: -3000;
+  animation: bounce-in 1s forwards;
+  margin-bottom: 2em;
+}
+
+.contact-form-phone .check {
+  right: 20em;
+  bottom: 0;
+}
+.contact-form-subject .check {
+  right: 18.5em;
+  bottom: 2.5em;
+}
+
+.contact-form input#name,
+.contact-form input#email {
+  margin-bottom: -200px;
+}
+
+
 @media screen and (min-width: 40em) {
   .left-nav {
     grid-column: 2;
@@ -620,10 +797,13 @@ input[type="checkbox"] {
     margin: 0;
     transform: rotateY(10deg);
   }
-  .show-card:hover {
+  .show-card:hover, .show-card:focus-within {
     flex: 2;
     animation: rotate-y 1s forwards;
     z-index: 10;
+    position: relative;
+    width: 50%;
+    margin: auto;
   }
 
 }
@@ -632,80 +812,23 @@ input[type="checkbox"] {
   .show-wrapper {
     margin-left: 1rem;
   }
+  .morph {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 25px;
+    cursor: pointer;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
 }
 
-
-/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@IMAGES@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-/*NIEUWE RELEASES*/
-#section1 .category .small-show {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/elite.jpg);
-  background-size: cover;
-  transition: 0.5s;
-
-}
-#section1 .category .small-show:nth-child(1) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/thespy.jpg);
-}
-#section1 .category .small-show:nth-child(2) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/orphanblack.jpg);
-}
-
-#section1 .category .small-show:nth-child(3) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/mind_explained.jpg);
-}
-
-#section1 .category .small-show:nth-child(4) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/Unbelievable.jpg);
-}
-
-#section1 .category .small-show:nth-child(5) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/whitegold.jpg);
-}
-/* Next Row */
-#section1 .category-next .small-show {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/thespy.jpg);
-  background-size: cover;
-  transition: 0.5s;
-}
-#section1 .category-next .small-show:nth-child(1) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/elite.jpg);
-}
-#section1 .category-next .small-show:nth-child(2) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/mind_explained.jpg);
-}
-
-#section1 .category-next .small-show:nth-child(3) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/whitegold.jpg);
-}
-
-#section1 .category-next .small-show:nth-child(4) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/Unbelievable.jpg);
-}
-
-#section1 .category-next .small-show:nth-child(5) {
-  background-image:
-          linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)),
-          url(../media/images/orphanblack.jpg);
-}

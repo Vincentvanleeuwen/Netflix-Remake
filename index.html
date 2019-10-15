@@ -6,7 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible"
         content="ie=edge">
-  <title>Document</title>
+  <title>Netflix</title>
   <link rel="stylesheet"
         href="css/style.css">
   <link rel="stylesheet"
@@ -32,31 +32,33 @@
     </a>
     <!--Small screen Navigation-->
     <ul class="small-nav">
+      <!--Dropdown-->
       <li class="dropdown-activator">
         <a href="">
-          <span> Bladeren</span>
+          Bladeren
           <i class="material-icons"> arrow_drop_down </i>
         </a>
+        <ul class="dropdown">
+          <li>
+            <a href="#"> Homepagina </a>
+          </li>
+          <li>
+            <a href="#"> Series </a>
+          </li>
+          <li>
+            <a href="#"> Films </a>
+          </li>
+          <li>
+            <a href="#"> Onlangs toegevoegd</a>
+          </li>
+          <li>
+            <a href="#"> Mijn lijst </a>
+          </li>
+        </ul>
       </li>
     </ul>
-    <!--Dropdown-->
-    <ul class="dropdown">
-      <li>
-        <a href=""> Homepagina </a>
-      </li>
-      <li>
-        <a href=""> Series </a>
-      </li>
-      <li>
-        <a href=""> Films </a>
-      </li>
-      <li>
-        <a href=""> Onlangs toegevoegd</a>
-      </li>
-      <li>
-        <a href=""> Mijn lijst </a>
-      </li>
-    </ul>
+
+
 
     <ul class="left-nav">
       <li class="nav-item">
@@ -81,21 +83,25 @@
       <li class="nav-item">
         <a href=""> <i class="material-icons"> search </i> </a>
       </li>
-      <li class="nav-item">
-        <a href=""> KIDS </a>
-      </li>
-      <li class="nav-item">
-        <a href=""> <i class="material-icons"> notifications </i> </a>
-      </li>
-      <li class="nav-item">
-        <a href=""> <i class="material-icons"> card_giftcard </i> </a>
-      </li>
-      <li class="nav-item">
+
+      <li class="nav-item profile-dropdown-activator">
         <a href="">
           <img class="logo"
-               src="./media/images/avatar.jpg">
+               src="./media/images/avatar.jpg"
+               alt="Avatar">
           <i class="material-icons"> arrow_drop_down </i>
         </a>
+        <ul class="profile-dropdown">
+          <li>
+            <a href="#"> Mijn Profiel </a>
+          </li>
+          <li>
+            <a href="pages/contact.html"> Contact </a>
+          </li>
+          <li>
+            <a href="#"> Uitloggen </a>
+          </li>
+        </ul>
       </li>
     </ul>
 
