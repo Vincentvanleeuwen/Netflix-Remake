@@ -376,24 +376,12 @@ input[type="checkbox"] {
   transform: translate(-45px);
 }
 
-/*.small-show:hover {*/
-/*  !*transform: scale(1.4);*!*/
-/*  !*margin: 0 40px;*!*/
-/*  background-size: cover;*/
-/*  width: 150%;*/
-/*  height: 150%;*/
-/*  transition: 0.5s;*/
-/*  z-index: 10;*/
-/*  cursor: pointer;*/
-
-/*}*/
-
 /*Category vertical whitespace*/
 #new-releases {
   position: relative;
 }
 
-
+/*Source: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateZ*/
 #shows {
   display: flex;
   flex-wrap: wrap;
