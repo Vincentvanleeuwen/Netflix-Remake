@@ -193,7 +193,7 @@ nav li:hover ul, li:focus-within ul {
 .highlighted-show{
   grid-gap: 5px;
   list-style: none;
-  margin: 0;
+  margin: 6em 0 0 0;
 }
 
 .categories {
@@ -277,7 +277,7 @@ input[type="checkbox"] {
   color: white;
   font-size: calc(1.5em + 8 * ((100vw - 320px) / 880));
   font-weight: bold;
-  margin: 0 0 1rem calc(66px + 8 * ((100vw - 320px) / 880));
+  margin: 0 0 0 calc(66px + 8 * ((100vw - 320px) / 880));
 
 }
 .small {
@@ -340,8 +340,8 @@ input[type="checkbox"] {
 /*}*/
 
 /*Category vertical whitespace*/
-#section1, #section2, #section3 {
-  margin-bottom: 2em;
+#new-releases {
+  position: relative;
 }
 
 
@@ -353,7 +353,7 @@ input[type="checkbox"] {
   align-items: start;
   perspective: 20em;
   overflow: hidden;
-  padding: 10em 0;
+  padding: 0;
 }
 
 .show-card {
@@ -365,7 +365,8 @@ input[type="checkbox"] {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 0.5fr;
   grid-row-gap: 1em;
-  height: 28em;
+  max-height: 28em;
+  max-width: 15em;
   width: 100%;
   border-radius: 3%;
   box-shadow: 0 50px 40px rgba(0,0,0,0.5);
@@ -478,25 +479,28 @@ input[type="checkbox"] {
 }
 
 .arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 
-  position: relative;
   color: #fff;
   text-decoration: none;
   font-size: 6em;
-  background: rgb(0, 0, 0);
-  width: 80px;
-  padding: 30px 20px;
+  background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  padding: .5em .2em;
   text-align: center;
   z-index: 15;
   cursor: pointer;
+  transition: .3s;
+
 }
-#shows .arrows:first-child {
-  background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-  left: 2.67%;
+
+.categories .arrows:first-of-type:hover, .categories .arrows:last-of-type:hover {
+  font-size: 7em;
 }
-#shows .arrows:last-child {
-   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-  right: 2.67%;
+.categories .arrows:last-of-type {
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  right: 0;
  }
 
 
@@ -789,7 +793,9 @@ label[for="onderwerp"] {
     transform: scale(1);
   }
 
-
+  #shows {
+    padding: 8em 0 8em 3.8em;
+  }
   .show-description {
     max-width: 35%;
   }
@@ -797,6 +803,11 @@ label[for="onderwerp"] {
   .show-card {
     margin: 0;
     transform: rotateY(10deg);
+
+  }
+  .show-card:nth-child(even) {
+    transform: rotateY(-11deg);
+
   }
 
   .show-card:hover, .show-card:focus-within {
@@ -805,7 +816,11 @@ label[for="onderwerp"] {
     z-index: 10;
     position: relative;
     width: 50%;
+    max-width: 28em;
     margin: auto;
+  }
+  .show-card:hover .show-card:not(:hover) {
+    transition: 1s;
   }
 
 }
