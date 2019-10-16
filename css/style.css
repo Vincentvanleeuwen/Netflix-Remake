@@ -72,6 +72,55 @@ main {
   align-items: center;
   flex-direction: row;
 }
+#search {
+  width: 100%;
+  padding: .5em 1em;
+  margin-bottom: 2em;
+  background-color: inherit;
+  box-shadow: inset 0 0 10px #000000;
+  color: white;
+  border: 1px solid rgba(229,9,20,1);
+  border-radius: 5px;
+}
+.search-nav-item {
+  display: flex!important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-input {
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.0);
+}
+.search-animation-expand {
+  position: relative;
+  display: flex;
+  margin-top: 0.3em;
+  left: 15%;
+  animation: search-animation-expand 1s ease-in forwards;
+}
+.search-animation-collapse {
+  position: relative;
+  display: flex;
+  margin-top: 0.3em;
+  left: 15%;
+  animation: search-animation-collapse 1s ease-in forwards;
+}
+
+.search-nav-item:focus a {
+  color: red;
+}
+.search-nav-item i {
+  cursor: pointer;
+  position: relative;
+}
+.search-icon {
+  z-index: 15;
+
+}
 
 .logo-position {
   display: flex;
@@ -824,6 +873,15 @@ label[for="onderwerp"] {
   }
 
 }
+.pagination {
+  animation: pagination-transition 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
+  opacity: 1;
+}
+.pagination-reverse {
+  animation: pagination-transition-reverse 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
+  opacity: 0;
+}
+
 
 @media screen and (min-width: 30em) {
   .show-wrapper {

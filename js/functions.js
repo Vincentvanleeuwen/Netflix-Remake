@@ -1,5 +1,7 @@
+// Make sure everything is loaded up before javascript!
 window.addEventListener('DOMContentLoaded', (event) => {
 
+  // Array with all Shows
   let showArray = {
     "shows": [
       {
@@ -113,6 +115,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
         "url": "pages/white.html"
       },
       {
+        "name": "White Gold",
+        "description": "In het Essex van de jaren 80 doen de arrogante verkoper Vincent Swan en zijn gewetenloze " +
+          "team alles om de deal te sluiten. Daarbij gaan ze niet altijd eerlijk te werk. ",
+        "age": "12",
+        "seasons": "2",
+        "genres": ["Britse series", "Comedyseries"],
+        "creator": ["Damon Beesley"],
+        "image": "media/images/whitegold.jpg",
+        "url": "pages/white.html"
+      },
+      {
         "name": "Unbelievable",
         "description": "Een jonge vrouw wordt beschuldigd van liegen over verkrachting. Twee vrouwelijke " +
           "detectives onderzoeken een reeks identieke aanvallen. Gebaseerd op ware gebeurtenissen",
@@ -124,70 +137,69 @@ window.addEventListener('DOMContentLoaded', (event) => {
         "url": "pages/peaky.html"
       },
       {
-        "name": "White Gold",
-        "description": "In het Essex van de jaren 80 doen de arrogante verkoper Vincent Swan en zijn gewetenloze " +
-          "team alles om de deal te sluiten. Daarbij gaan ze niet altijd eerlijk te werk. ",
+        "name": "Peaky Blinders",
+        "description": "Het is 1919 in Birmingham, Engeland. Een beruchte bende wordt er geleid door" +
+          " Tommy Shelby, een misdaadbaas die de maatschappelijke ladder wil beklimmen",
+        "age": "16",
+        "seasons": "5",
+        "genres": ["Britse series", "Dramaseries", "Misdaadseries"],
+        "creator": ["Steven Knight"],
+        "image": "media/images/peaky-blinders.jpg",
+        "url": "pages/peaky.html"
+      },
+      {
+        "name": "Elite",
+        "description": " Als drie arbeiderskinderen zich inschrijven bij een exclusieve privéschool in Spanje, " +
+          "leidt de confrontatie tussen de arme en rijke studenten tot een moord.",
+        "age": "16",
+        "seasons": "5",
+        "genres": ["Britse series", "Dramaseries", "Misdaadseries"],
+        "creator": ["Carlos Montero", "Dario Madrona"],
+        "image": "media/images/elite.jpg",
+        "url": "pages/peaky.html"
+      },
+      {
+        "name": "Mind Explained",
+        "description": "Heb je je ooit afgevraagd wat er in je hoofd gebeurd? Van dromen tot angststoornissen" +
+          " ontdek in deze verhelderende serie hoe je hersenen werken.",
         "age": "12",
-        "seasons": "2",
-        "genres": ["Britse series", "Comedyseries"],
-        "creator": ["Damon Beesley"],
-        "image": "media/images/whitegold.jpg",
-        "url": "pages/white.html"
+        "seasons": "1",
+        "genres": ["Natuur en wetenschap", "Amerikaanse series", "Docuseries", "Documentaires"],
+        "creator": ["Emma Stone"],
+        "image": "media/images/mind_explained.jpg",
+        "url": "pages/peaky.html"
       }
     ]
   };
 
   let showContainer = document.getElementById("shows");
-
-  //https://www.quora.com/What-is-a-simple-way-to-implement-pagination-on-an-array-in-Javascript
-  paginate = (array, page_number, page_size) => {
-    // return arr.slice(perPage*(page-1), perPage*page);
-    --page_number; // because pages logically start with 1, but technically with 0
-    return array.slice(page_number * page_size, (page_number + 1) * page_size);
-  };
-  function paginate (array, page_size, page_number) {
-
-  }
-
-
   let showAmount = showArray.shows;
-  let showsPerPage = 5;
-  let currentPage = 1;
-  let totalPages = Math.ceil(showAmount.length / showsPerPage);
-  let next = document.getElementById('next');
-  let prev = document.getElementById('previous');
 
-  next.addEventListener('click', () => {
-    if (currentPage === totalPages) {
-      currentPage = 1;
-      showContainer.innerHTML = "";
-      loadShows();
-      return;
-    }
-    currentPage++;
+  //Function to create a pagination within the website
+  //Source: https://www.quora.com/What-is-a-simple-way-to-implement-pagination-on-an-array-in-Javascript
+  paginate = (array, currentNumber, amountItems) => {
+    --currentNumber; // Current number set to 0 because array counts from 0.
+    return array.slice(currentNumber * amountItems, (currentNumber + 1) * amountItems);
+  };
 
-    showContainer.innerHTML = "";
-    loadShows();
-  });
+  // State pagination data
+  let showsPerPage = 5,
+      currentPage = 1,
+      totalPages = Math.ceil(showAmount.length / showsPerPage);
 
-  prev.addEventListener('click', () => {
-    if (currentPage === 1) {
-      currentPage = totalPages;
-      showContainer.innerHTML = "";
-      loadShows();
-      return;
-    }
-    currentPage--;
+  // Next & previous buttons
+  let next = document.getElementById('next'),
+      prev = document.getElementById('previous')
 
-    showContainer.innerHTML = "";
-    loadShows();
-  });
 
+  // Load all elements in from each show
   loadShows = () => {
 
-      let showPage = paginate(showAmount, showsPerPage, currentPage).length;
+      // Get the length of one page
+      let showPage = paginate(showAmount, currentPage, showsPerPage);
 
-      for(let i = 0; i < showPage; i++) {
+      // For each show create elements
+      for(let i = 0; i < showPage.length; i++) {
 
           // Creating all elements
 
@@ -195,20 +207,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
           container.classList.add("show-card");
           container.tabIndex = 0;
 
-          container.title = showAmount[i].url;
+          container.title = showPage[i].url;
 
           let img = document.createElement("img");
-          img.src = showAmount[i].image;
-          img.alt = showAmount[i].name;
+          img.src = showPage[i].image;
+          img.alt = showPage[i].name;
 
           let header = document.createElement("h2");
           header.classList.add("show-card-header");
-          let headerText = document.createTextNode("" + showAmount[i].name + "");
+          let headerText = document.createTextNode("" + showPage[i].name + "");
           header.appendChild(headerText);
 
           let description = document.createElement("p");
           description.classList.add("show-card-description");
-          let descriptionText = document.createTextNode("" + showAmount[i].description + "");
+          let descriptionText = document.createTextNode("" + showPage[i].description + "");
           description.appendChild(descriptionText);
 
           let genres = document.createElement("section");
@@ -221,7 +233,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
           let genresList = document.createElement("ul");
           genresList.classList.add("show-card-genres-list");
 
-          let showGenres = showAmount[i].genres;
+          let showGenres = showPage[i].genres;
+
+          // Create li for each genre
           for(x = 0; x < showGenres.length; x++) {
               let genre = document.createElement("li");
               genre.classList.add("show-card-genre");
@@ -237,7 +251,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
           let age = document.createElement("span");
           age.classList.add("show-card-age");
-          let ageText = document.createTextNode("" + showAmount[i].age + "" + "+");
+          let ageText = document.createTextNode("" + showPage[i].age + "" + "+");
           age.appendChild(ageText);
 
           let creators = document.createElement("section");
@@ -250,12 +264,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
           let creatorList = document.createElement("ul");
           creatorList.classList.add("show-card-creator-list");
 
-          for(y = 0; y < showAmount[i].creator.length; y++) {
+          // Create li for each creator
+          for(y = 0; y < showPage[i].creator.length; y++) {
 
               let creator = document.createElement("li");
               creator.classList.add("show-card-creator");
 
-              let creatorName = document.createTextNode("" + showAmount[i].creator[y] + "");
+              let creatorName = document.createTextNode("" + showPage[i].creator[y] + "");
               creator.appendChild(creatorName);
 
               creatorList.appendChild(creator);
@@ -264,13 +279,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
           let seasonsAmount = document.createElement("h3");
           seasonsAmount.classList.add("show-card-seasons");
-          let seasonsAmountText = document.createTextNode("" + showAmount[i].seasons + " Seasons");
+          let seasonsAmountText = document.createTextNode("" + showPage[i].seasons + " Seasons");
           seasonsAmount.appendChild(seasonsAmountText);
 
           // All Elements created
-          // Now starting to combine
 
-
+          // Now combining all elements
           showContainer.appendChild(container);
           container.appendChild(img);
 
@@ -295,14 +309,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   loadShows();
 
+  // Select all shows
   let singleShow = document.querySelectorAll(".show-card");
 
+  // For each show, add animation on click
   for(let i = 0; i < singleShow.length; i++) {
     console.log("hello");
     singleShow[i].transition = "all 5s cubic-bezier(.22,.04,.59,1.73)";
     singleShow[i].addEventListener('click', () => {
       singleShow[i].classList.add('slide-out');
 
+      // Wait for the animation to play out
       setTimeout(() => {
         window.location.href = singleShow[i].title;
       }, 1000);
@@ -310,5 +327,115 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
+  console.log("currentpage beforeclick = ", currentPage);
+
+  // Next shows animation on click
+  next.addEventListener('click', () => {
+
+    // If there is no next page
+    if (currentPage === totalPages) {
+
+      // Return to first page
+      currentPage = 1;
+
+      // Add an animation to each show before leaving
+      for(i = 0; i < singleShow.length; i++) {
+        singleShow[i].classList.toggle('pagination');
+
+      }
+
+      // Wait for the animation to play out
+      setTimeout(() => {
+        //Load in new shows
+        showContainer.innerHTML = "";
+        loadShows();
+
+      }, 500);
+
+      return;
+    }
+
+    // If there is a next page
+    // Add an animation to each show before leaving
+    for(i = 0; i < singleShow.length; i++) {
+      singleShow[i].classList.add('pagination');
+    }
+
+    // Wait for the animation to play out
+    setTimeout(() => {
+      currentPage++;
+
+      //Load in new shows
+      showContainer.innerHTML = "";
+      loadShows();
+
+      for(i = 0; i < singleShow.length; i++) {
+        singleShow[i].classList.toggle('pagination');
+        singleShow[i].classList.toggle('pagination-reverse');
+      }
+      console.log("currentpage after = ", currentPage);
+      console.log("singleshows", singleShow);
+
+    }, 500);
+
+
+  });
+
+  // Previous shows animation on click
+  prev.addEventListener('click', () => {
+
+    // If there is no previous page
+    if (currentPage === 1) {
+      // Return to last page
+      currentPage = totalPages;
+
+      // Add an animation to each show before leaving
+      for(i = 0; i < singleShow.length; i++) {
+        singleShow[i].classList.add('pagination');
+
+      }
+
+      // Wait for the animation to play out
+      setTimeout(() => {
+
+        //Load in new shows
+        showContainer.innerHTML = "";
+        loadShows();
+      }, 500);
+
+      return;
+    }
+
+    // If there is a previous page
+    // Add an animation to each show before leaving
+    for(i = 0; i < singleShow.length; i++) {
+      singleShow[i].classList.add('pagination');
+
+    }
+
+    // Wait for the animation to play out
+    setTimeout(() => {
+      currentPage--;
+
+      //Load in new shows
+      showContainer.innerHTML = "";
+      loadShows();
+    }, 500);
+  });
+
+  let search = document.querySelector('.search-icon');
+  let searchInput = document.querySelector('.search-input');
+
+  // When the search icon is clicked, change the animation
+  search.addEventListener('click', () => {
+
+    // Switch between collapse and expand
+    if (searchInput.classList.contains('search-animation-expand')) {
+      searchInput.classList.toggle('search-animation-collapse');
+    } else {
+      searchInput.classList.toggle('search-animation-expand');
+    }
+
+  });
 
 });
