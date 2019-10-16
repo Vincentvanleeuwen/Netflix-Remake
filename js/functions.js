@@ -83,8 +83,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   };
 
   let showContainer = document.getElementById("shows");
-
-
+  let madeShows = [];
+  //https://arjunphp.com/can-paginate-array-objects-javascript/
   loadShows = () => {
       console.log(showArray.shows.length);
       let showAmount = showArray.shows;
@@ -193,11 +193,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
           container.appendChild(seasonsAmount);
 
+          madeShows.push(container);
       }
 
   };
 
   loadShows();
+  console.log("madeshows", madeShows);
 
   let singleShow = document.querySelectorAll(".show-card");
   console.log(singleShow);
