@@ -236,7 +236,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
           let showGenres = showPage[i].genres;
 
           // Create li for each genre
-          for(x = 0; x < showGenres.length; x++) {
+          for(let x = 0; x < showGenres.length; x++) {
               let genre = document.createElement("li");
               genre.classList.add("show-card-genre");
 
@@ -265,7 +265,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
           creatorList.classList.add("show-card-creator-list");
 
           // Create li for each creator
-          for(y = 0; y < showPage[i].creator.length; y++) {
+          for(let y = 0; y < showPage[i].creator.length; y++) {
 
               let creator = document.createElement("li");
               creator.classList.add("show-card-creator");
@@ -437,5 +437,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
   });
-
+  
 });
