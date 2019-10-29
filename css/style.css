@@ -1,3 +1,6 @@
+/*=================================GENERAL========================================*/
+
+/*Met Root kun je variabelen aanmaken die je vervolgens in het hele document kunt hergebruiken.*/
 :root {
   --main-font: Roboto, sans-serif;
   --stroke-width: 0.625em;
@@ -20,29 +23,33 @@ body {
 }
 header {
   width: 100%;
-
 }
 main {
   width: 100%;
   display: grid;
   grid-auto-rows: minmax(7.8em, auto);
 }
+/*=================================END GENERAL========================================*/
 
-/* Navigation */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NAVIGATION~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Top/Main Navigation */
 .main-nav {
   width: 100vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 0.5fr 1fr auto 1fr;
-
   position: fixed;
   background-color: rgba(17,17,17,0.7);
   z-index: 200;
 }
 
+/* The left elements of the main nav.*/
 .left-nav {
   display:none;
 }
+
+/*The right elements of the main nav*/
 .right-nav {
   grid-column: 4;
   display: flex;
@@ -51,7 +58,7 @@ main {
   flex-direction: row;
 }
 
-/*Responsive Navigation*/
+/*Mobile Navigation*/
 .small-nav {
   grid-column: 2;
   display: flex;
@@ -60,17 +67,13 @@ main {
   flex-direction: row;
 }
 
+/*Give each item a margin*/
 .nav-item {
   margin: 0 0.65rem;
   width: max-content;
 }
 
-.right-nav .nav-item a:last-child {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
+/*Searchbar*/
 #search {
   width: 100%;
   padding: .5rem 1rem;
@@ -81,12 +84,16 @@ main {
   border: 1px solid rgba(229,9,20,1);
   border-radius: 5px;
 }
+
+/*Special nav item Search*/
 .search-nav-item {
   display: flex!important;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
+/*Search Input field*/
 .search-input {
   display: none;
   opacity: 0;
@@ -94,6 +101,8 @@ main {
   justify-content: center;
   color: rgba(0, 0, 0, 0.0);
 }
+
+/*Animation when search expands*/
 .search-animation-expand {
   position: relative;
   display: flex;
@@ -101,6 +110,8 @@ main {
   left: 15%;
   animation: search-animation-expand 1s ease-in forwards;
 }
+
+/*Animation when search collapsed*/
 .search-animation-collapse {
   position: relative;
   display: flex;
@@ -109,30 +120,20 @@ main {
   animation: search-animation-collapse 1s ease-in forwards;
 }
 
-.search-nav-item:focus a {
-  color: red;
-}
-.search-nav-item i {
+/*Search Icon*/
+.search-icon {
   cursor: pointer;
   position: relative;
-}
-.search-icon {
   z-index: 15;
-
 }
 
-.logo-position {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
+/*Profile Avatar*/
+.avatar {
   grid-column: 1;
   max-height: 4em;
   cursor: pointer;
-
 }
+
 /* Disable logo on mobile */
 .morph {
   display: none;
@@ -141,7 +142,6 @@ main {
 
 .icon {
   width: 50%;
-
 }
 
 .morph path {
@@ -396,7 +396,7 @@ input[type="checkbox"] {
   grid-column: span 2;
   max-width: 90%;
   padding-left: 2rem;
-  font-size: calc(.1vw + 8 * ((100vw - 20em) / 880));
+  font-size: .5em;
   text-shadow: 2px 2px 2px rgba(229,9,20,1);
 }
 .show-card-age {
@@ -770,6 +770,60 @@ label[for="onderwerp"] {
   margin-bottom: -12.5rem;
 }
 
+.lasers {
+  width: 100vw;
+  height: 68vh;
+  position: absolute;
+  opacity: 0;
+}
+.laser {
+  position: relative;
+  width: .4em;
+  height: 40em;
+  opacity: 1;
+  background: linear-gradient(45deg, transparent, white);
+  transform: rotate(63deg);
+  left: 33%;
+  top: 22.2%;
+  border-radius: 100em;
+  z-index: 999;
+}
+.laser-animation {
+  animation: laser-effect .5s cubic-bezier(.4,1.04,1,1.48) 0.5s infinite;
+}
+
+.eye, .eye-two, .frame {
+  position: relative;
+  width: 2em;
+  height: 1em;
+  background-color: #ceb0ce;
+  mix-blend-mode: color-dodge;
+  border-radius: 50%;
+  left: 47.1%;
+  top: 58.5%;
+  opacity: 1;
+  box-shadow: 1px 0 24px rgba(255, 146, 255, 1);
+}
+.eye-two {
+  left: 50.2%;
+  top: 56.1%;
+}
+.frame {
+  width: 10em;
+  height: 2em;
+  left: 45.4%;
+  top: 52.3%;
+  perspective: 5.5cm;
+}
+
+.pagination {
+  animation: pagination-transition 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
+  opacity: 1;
+}
+.pagination-reverse {
+  animation: pagination-transition-reverse 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
+  opacity: 0;
+}
 
 @media screen and (min-width: 40em) {
   .left-nav {
@@ -808,7 +862,7 @@ label[for="onderwerp"] {
   .show-card {
     margin: 0;
     transform: rotateY(10deg);
-
+    min-height: 32em;
   }
   .show-card:nth-child(even) {
     transform: rotateY(-11deg);
@@ -827,16 +881,11 @@ label[for="onderwerp"] {
   .show-card:hover .show-card:not(:hover) {
     transition: 1s;
   }
+  .show-card-description {
+    font-size: 1em;
+  }
+}
 
-}
-.pagination {
-  animation: pagination-transition 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
-  opacity: 1;
-}
-.pagination-reverse {
-  animation: pagination-transition-reverse 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
-  opacity: 0;
-}
 
 
 @media screen and (min-width: 30em) {

@@ -189,7 +189,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // Next & previous buttons
   let next = document.getElementById('next'),
-      prev = document.getElementById('previous')
+      prev = document.getElementById('previous');
 
 
   // Load all elements in from each show
@@ -390,7 +390,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       currentPage = totalPages;
 
       // Add an animation to each show before leaving
-      for(i = 0; i < singleShow.length; i++) {
+      for(let i = 0; i < singleShow.length; i++) {
         singleShow[i].classList.add('pagination');
 
       }
@@ -408,7 +408,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // If there is a previous page
     // Add an animation to each show before leaving
-    for(i = 0; i < singleShow.length; i++) {
+    for(let i = 0; i < singleShow.length; i++) {
       singleShow[i].classList.add('pagination');
 
     }
@@ -437,5 +437,81 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
   });
-  
+
+  // Set all letters
+  let keyWord = {
+      g: 0,
+      a: 0,
+      n: 0,
+      s: 0,
+      t: 0,
+      e: 0,
+      r: 0
+  };
+
+  // Find the lasers
+  let lasers = document.querySelector(".lasers");
+
+  // Activate function on keypress
+  window.onkeypress = function(event) {
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+        // https://stackoverflow.com/questions/35394937/keyboardevent-keycode-deprecated-what-does-this-mean-in-practice
+        // -- 3rde comment staat het uitgelegd!
+
+        // Check if a key is a key from the word
+        switch(event.code) {
+            case "KeyG":
+                keyWord.g++;
+                break;
+            case "KeyA":
+                keyWord.a++;
+                break;
+            case "KeyN":
+                keyWord.n++;
+                break;
+            case "KeyS":
+                keyWord.s++;
+                break;
+            case "KeyT":
+                keyWord.t++;
+                break;
+            case "KeyE":
+                keyWord.e++;
+                break;
+            case "KeyR":
+                keyWord.r++;
+                break;
+        }
+
+        if (event.key === "Enter") {
+            // Check if all keys are pressed
+            if (keyWord.g === 2 &&
+                keyWord.a &&
+                keyWord.n &&
+                keyWord.g &&
+                keyWord.s &&
+                keyWord.t &&
+                keyWord.e &&
+                keyWord.r) {
+                // Show lasers
+                lasers.style.opacity = "1";
+                setTimeout( () => {
+                    // Hide lasers
+                    lasers.style.opacity = "0";
+
+                    // Reset all letters so it can be activated again.
+                    keyWord.a = 0;
+                    keyWord.n = 0;
+                    keyWord.g = 0;
+                    keyWord.s = 0;
+                    keyWord.t = 0;
+                    keyWord.e = 0;
+                    keyWord.r = 0;
+                }, 5000);
+
+            }
+        }
+
+  }
+
 });

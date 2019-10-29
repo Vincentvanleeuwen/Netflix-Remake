@@ -167,3 +167,22 @@
     left: 0;
   }
 }
+
+@keyframes laser-effect {
+  0% {
+
+    background: linear-gradient(45deg, white, transparent);
+    opacity: 1;
+    left: 33%;
+    top: 22.2%;
+  }
+
+  100% {
+    background: linear-gradient(45deg, transparent, white);
+
+    opacity: 1;
+    left: -50%;
+    top: 150%;
+  }
+
+}
