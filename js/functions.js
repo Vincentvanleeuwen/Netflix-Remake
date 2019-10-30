@@ -529,12 +529,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 keyWord.e &&
                 keyWord.r) {
                 // Show lasers
+                lasers.style.zIndex = "1";
                 lasers.style.opacity = "1";
                 setTimeout( () => {
                     // Hide lasers
                     lasers.style.opacity = "0";
+                    lasers.style.zIndex = "-1";
 
-                    // Reset all letters so it can be activated again.
+                  // Reset all letters so it can be activated again.
                     keyWord.a = 0;
                     keyWord.n = 0;
                     keyWord.g = 0;

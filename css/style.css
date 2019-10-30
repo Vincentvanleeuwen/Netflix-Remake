@@ -1,3 +1,12 @@
+/*1. General           LINE 10 - 41         */
+/*2. Navigation        LINE 43 - 251        */
+/*3. Highlighted Show  LINE 253 - 359       */
+/*4. Shows             LINE 361 - 591       */
+/*5. Detail Page       LINE 648 - 659       */
+/*6. Contact Page      LINE 661 - 818       */
+/*7. Media Queries     LINE 869 - 968       */
+
+
 /*=================================GENERAL========================================*/
 
 /*Met Root kun je variabelen aanmaken die je vervolgens in het hele document kunt hergebruiken.*/
@@ -408,6 +417,16 @@ input[type="checkbox"] {
 
 }
 
+/*Next and previous animation*/
+.pagination {
+  animation: pagination-transition 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
+  opacity: 1;
+}
+.pagination-reverse {
+  animation: pagination-transition-reverse 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
+  opacity: 0;
+}
+
 /*Only select the right arrow*/
 .categories .arrows:last-of-type {
   background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
@@ -575,7 +594,8 @@ input[type="checkbox"] {
 .advertisement {
   display: flex;
   flex-direction: row;
-  height: 80vh;
+  height: 40vh;
+  justify-content: center;
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -587,10 +607,10 @@ input[type="checkbox"] {
 
 /*Image container*/
 .main-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50vw;
+  display: none!important;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*width: 50vw;*/
 }
 .main-image img {
   width: 75%;
@@ -638,7 +658,7 @@ input[type="checkbox"] {
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ End Detail page @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
-/*############## Contact Page ################*/
+/*################################# Contact Page ##############################*/
 .contact-main {
   display: flex;
   flex-direction: column;
@@ -671,9 +691,12 @@ input[type="checkbox"] {
   border: 1px solid rgba(229,9,20,1);
   border-radius: 5px;
 }
+/*Make telephone field smaller*/
 .contact-form input[type="tel"] {
   width: 50%;
 }
+
+/*Change the google autofill color*/
 /*https://webagility.com/posts/the-ultimate-list-of-hacks-for-chromes-forced-yellow-background-on-autocompleted-inputs*/
 .contact-form input:-webkit-autofill,
 .contact-form input:-webkit-autofill:hover,
@@ -710,7 +733,7 @@ label[for="onderwerp"] {
   color: black;
 }
 
-
+/*Disabled First option*/
 .contact-form option:disabled {
   color: grey;
 }
@@ -764,6 +787,7 @@ label[for="onderwerp"] {
   display:none;
 }
 
+/* When the field is valid, show checkmark*/
 #name:valid ~ .check polygon,
 #email:valid ~ .check polygon,
 #phone:valid ~ .check polygon,
@@ -789,6 +813,7 @@ label[for="onderwerp"] {
 .contact-form input#email {
   margin-bottom: -12.5rem;
 }
+/*################################# End Contact Page ##############################*/
 
 /* Lasers!*/
 .lasers {
@@ -796,6 +821,7 @@ label[for="onderwerp"] {
   height: 68vh;
   position: absolute;
   opacity: 0;
+  z-index: -1;
 }
 .laser {
   position: relative;
@@ -838,15 +864,9 @@ label[for="onderwerp"] {
 }
 /*Lasers End*/
 
-.pagination {
-  animation: pagination-transition 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
-  opacity: 1;
-}
-.pagination-reverse {
-  animation: pagination-transition-reverse 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
-  opacity: 0;
-}
 
+
+/*%%%%%%%%%%%%%%%%%%%%%%%%% Media Queries for responsive PRO! %%%%%%%%%%%%%%%%%%*/
 @media screen and (min-width: 40em) {
   .left-nav {
     grid-column: 2;
@@ -906,10 +926,22 @@ label[for="onderwerp"] {
   .show-card-description {
     font-size: 1em;
   }
+
 }
 
 
-
+@media screen and (min-width: 56.25em) {
+  /*Delete image on from 56em*/
+  .main-image {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+  }
+  .advertisement {
+    height: 40vh!important;
+  }
+}
 @media screen and (min-width: 30em) {
   .show-wrapper {
     margin-left: 1rem;
