@@ -1,10 +1,8 @@
+/* Netflix animate on hover*/
 @keyframes animate-netflix-hover {
   15% {
     stroke: #fff;
   }
-  /*35% {
-      fill: transparent;
-  }*/
   50% {
     stroke-dashoffset: 0;
     stroke-width: var(--stroke-width);
@@ -24,6 +22,7 @@
   }
 }
 
+/* Animate the Netflix Logo on load*/
 @keyframes animate-netflix {
   15% {
 
@@ -50,11 +49,13 @@
   }
 }
 
+/*Rotate the card back to normal state on hover*/
 @keyframes rotate-y {
   from {transform: rotateY(10deg) scale(1);}
   to {transform: rotateY(0deg) scale(1.5)}
 }
 
+/* 3D effect for drop down hover*/
 /* http://animista.net/play/basic/shadow-pop */
 @keyframes move-out {
   0% {
@@ -83,6 +84,7 @@
   }
 }
 
+/*Make the card animate to the top so it transitions with the next page*/
 @keyframes slide-out {
   0% {
     margin-top: 1em;
@@ -92,15 +94,17 @@
   }
 }
 
+/*When entering detailpage of a show, the video slides in from the top*/
 @keyframes slide-in {
   0% {
-    bottom: 100vw;
+    bottom: 100vh;
   }
   100% {
     bottom: 0;
   }
 }
 
+/*Animation for the check marks in the contact form*/
 @keyframes bounce-in {
   50% {
     stroke-dashoffset: 0;
@@ -112,13 +116,11 @@
 
   100% {
     stroke-dashoffset: 0;
-
-    fill: rgba(229,9,20,1);
-
-
+    fill: #4a6740;
   }
 }
 
+/*When you press next or previous, flip the cards*/
 @keyframes pagination-transition {
   0% {
     transform: initial;
@@ -130,17 +132,7 @@
   }
 }
 
-@keyframes pagination-transition {
-  0% {
-    transform: rotateY(190deg);
-    opacity: 0;
-  }
-  100% {
-    transform: rotateY(11deg);
-    opacity: 1;
-  }
-}
-
+/*Open the search bar*/
 @keyframes search-animation-expand {
   0% {
     opacity: 0;
@@ -150,10 +142,11 @@
   100% {
     opacity: 1;
     width: 100%;
-    /*right: 100%;*/
     left: 15%;
   }
 }
+
+/*Close the search bar*/
 @keyframes search-animation-collapse {
   0% {
     opacity: 1;
@@ -168,6 +161,7 @@
   }
 }
 
+/*Shoot lasers!*/
 @keyframes laser-effect {
   0% {
 

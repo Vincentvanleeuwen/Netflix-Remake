@@ -191,6 +191,41 @@ window.addEventListener('DOMContentLoaded', (event) => {
   let next = document.getElementById('next'),
       prev = document.getElementById('previous');
 
+  // Get the browser width
+  let browserWidth = window.innerWidth;
+
+  // Adjust shows per page based on browser width
+  adjustShowsPerPage = () => {
+
+    if(browserWidth <= "850") {
+      showsPerPage = 3;
+    }
+    else if(browserWidth >= "850" && browserWidth <= "1150") {
+      showsPerPage = 4;
+    } else {
+      showsPerPage = 5;
+    }
+  };
+  adjustShowsPerPage();
+
+  // Adjust shows per page based on resizing the browser
+  window.addEventListener("resize", (e) => {
+    browserWidth = window.innerWidth;
+
+    let oldShowsPerPage = showsPerPage;
+
+    if (browserWidth <= "680") {
+      return;
+    }
+
+    adjustShowsPerPage();
+
+    if (oldShowsPerPage !== showsPerPage) {
+      showContainer.innerHTML = "";
+      loadShows();
+    }
+
+  });
 
   // Load all elements in from each show
   loadShows = () => {

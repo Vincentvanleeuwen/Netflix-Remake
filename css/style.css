@@ -29,9 +29,9 @@ main {
   display: grid;
   grid-auto-rows: minmax(7.8em, auto);
 }
-/*=================================END GENERAL========================================*/
+/*================================= END GENERAL ========================================*/
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NAVIGATION~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAVIGATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* Top/Main Navigation */
 .main-nav {
@@ -53,9 +53,10 @@ main {
 .right-nav {
   grid-column: 4;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: row;
+  margin-right: 1em;
 }
 
 /*Mobile Navigation*/
@@ -73,7 +74,7 @@ main {
   width: max-content;
 }
 
-/*Searchbar*/
+/*Search bar*/
 #search {
   width: 100%;
   padding: .5rem 1rem;
@@ -140,10 +141,7 @@ main {
 }
 
 
-.icon {
-  width: 50%;
-}
-
+/* Logo SVG properties for animation*/
 .morph path {
   fill: transparent;
   stroke: var(--color);
@@ -151,21 +149,19 @@ main {
   stroke-dasharray: 3000;
   stroke-dashoffset: -3000;
   animation: animate-netflix 4s forwards;
-
 }
 
+/* Logo SVG properties for animation hover*/
 .morph:hover path {
-
   fill: #d81f26;
   stroke: #fff;
   stroke-width: var(--stroke-width);
   stroke-dasharray: 3000;
   stroke-dashoffset: -3000;
   animation: animate-netflix-hover 3s forwards
-
 }
 
-
+/* Main navigation list items*/
 .main-nav ul li {
   color: white;
   font-family: var(--main-font);
@@ -174,12 +170,12 @@ main {
   border-bottom: 0;
 }
 
+/* Main navigation list item links*/
 .main-nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 0.8em;
   cursor: pointer;
-
 }
 
 /*Active Menu item*/
@@ -188,9 +184,9 @@ main {
 }
 
 /*Navigation dropdowns*/
-.dropdown, .profile-dropdown {
+.dropdown,
+.profile-dropdown {
   display: none;
-
   position: absolute;
   top: 3.1em;
   padding: 1rem .5rem;
@@ -198,16 +194,23 @@ main {
 
   /* http://animista.net/play/basic/shadow-pop */
   animation: move-out 0.3s cubic-bezier(.22,.04,.59,1.73) both;
-
 }
-.dropdown a, .profile-dropdown a  {
+
+/*Dropdown links*/
+.dropdown a,
+.profile-dropdown a  {
   color: white;
   z-index: 1;
 }
-.dropdown a:focus, .profile-dropdown a:focus {
+/*Dropdown item white border on focus*/
+.dropdown a:focus,
+.profile-dropdown a:focus {
   border-bottom: 3px solid white;
 }
-.dropdown-activator a, .profile-dropdown-activator a {
+
+/*Specifically in each list item*/
+.dropdown-activator a,
+.profile-dropdown-activator a {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -216,86 +219,41 @@ main {
   font-weight: bold;
 }
 
-
-.small-nav:hover .dropdown, .profile-dropdown-activator:hover .profile-dropdown {
+/*Show dropdown on mobile*/
+.small-nav:hover .dropdown,
+.profile-dropdown-activator:hover .profile-dropdown {
   display: block;
-  /*position: absolute;*/
+
 }
 
-.dropdown a:hover, .profile-dropdown a:hover {
+/* Change dropdown link style on hover*/
+.dropdown a:hover,
+.profile-dropdown a:hover {
   background-color: #ddd;
   color: black;
 }
 
-
-nav li:hover ul, li:focus-within ul {
+/* Enable dropdown to be tabbed through*/
+nav li:hover ul,
+li:focus-within ul {
   display: initial
 }
 
-/*Main Content*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END NAVIGATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*-------------------------------- Highlighted Show -------------------------------------*/
+
+/*Container for all content*/
 .shows-container {
   display: grid;
   grid-template-rows: repeat(4, 25vh);
 }
 
+/* Recommended show container*/
 .highlighted-show{
   grid-gap: 0.3125rem;
   list-style: none;
   margin: 6rem 0 0 0;
-}
-
-.categories {
-  display: grid;
-  grid-row: 3;
-}
-
-.category {
-  display: grid;
-  /*grid-auto-flow:column;*/
-}
-.category-next {
-  display: none;
-  opacity: 0;
-  left: 100vw;
-  transition: 1s;
-}
-.category, .category-next {
-  width: 100%;
-  position: relative;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: minmax(5em, 1fr);
-  grid-gap: 0.3125rem;
-  overflow: hidden;
-  list-style: none;
-  transition: 1s;
-
-}
-input[type="checkbox"] {
-  display: none;
-  position: absolute;
-  left: 50vw;
-}
-#next-arrow:checked ~ .category {
-  /*display: none;*/
-  left: -100vw;
-  transition: 1s;
-}
-#next-arrow:checked ~ .category-next {
-  /*display: grid;*/
-  left: 0;
-  opacity: 1;
-  transition: 1s;
-}
-
-#prev-arrow:checked ~ .category-next {
-  /*display: none;*/
-  left: 100vw;
-  transition: 1s;
-}
-#prev-arrow:checked ~ .category {
-  /*display: grid;*/
-  left: 0;
-  transition: 1s;
 }
 
 /*Add padding for content within highlighted show*/
@@ -313,23 +271,9 @@ input[type="checkbox"] {
   flex-direction: column;
   width: 100%;
   height: 100%;
+
+  /*https://css-tricks.com/snippets/css/fluid-typography/*/
   margin-left: calc(1em + 8 * ((100vw - 20em) / 880));
-}
-
-.show-heading {
-  font-size: calc(5vw + 8 * ((100vw - 20em) / 880));
-  margin-bottom: 0.2rem;
-}
-
-.category-header {
-  color: white;
-  font-size: calc(1.5em + 8 * ((100vw - 20em) / 880));
-  font-weight: bold;
-  margin: 0 0 0 calc(4.125rem + 8 * ((100vw - 20em) / 880));
-
-}
-.small {
-  font-size: 1.2em;
 }
 
 /*Add image to highlighted show*/
@@ -343,7 +287,74 @@ input[type="checkbox"] {
   width: 100vw;
   grid-column: 1 / -1;
   grid-row: span 3;
+}
 
+.show-heading {
+  font-size: calc(5vw + 8 * ((100vw - 20em) / 880));
+  margin-bottom: 0.2rem;
+}
+
+/* Highlighted show buttons*/
+.show-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/*Show button style*/
+.show-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: calc(1em + 8 * ((100vw - 20em) / 880));
+  width: max-content;
+  margin: 0 0.625rem;
+  padding: calc(1.25rem + 8 * ((100vw - 20em) / 880)) calc(1.25rem + 8 * ((100vw - 20em) / 880));
+  border-radius: 5px;
+  background-color: rgba(51, 51, 51, 0.4);
+  text-decoration: none;
+  color: white;
+  font-size: calc(0.5em + 8 * ((100vw - 20em) / 880));
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+/*On hover go bigger*/
+.show-button:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.show-button:first-child {
+  margin-left: 0;
+}
+
+.show-button i {
+  margin-right: 0.625rem;
+}
+.show-season {
+  font-weight: bold;
+  font-size: calc(1rem + 8 * ((100vw - 20em) / 880));
+  margin-bottom: 0.4rem;
+}
+.show-description {
+  font-size: calc(0.5rem + 8 * ((100vw - 20em) / 880));
+  max-width: 80%;
+}
+
+/*-------------------------------- Highlighted Show End -------------------------------------*/
+
+/*++++++++++++++++++++++++++++++++++ Shows +++++++++++++++++++++++++++++++++++++++*/
+
+/*Category container*/
+.categories {
+  display: grid;
+  grid-row: 3;
 }
 
 /*Category vertical whitespace*/
@@ -351,18 +362,78 @@ input[type="checkbox"] {
   position: relative;
 }
 
-/*Source: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateZ*/
+.category-header {
+  color: white;
+  font-size: calc(1.5em + 8 * ((100vw - 20em) / 880));
+  font-weight: bold;
+  margin: 0 0 0 calc(4.125rem + 8 * ((100vw - 20em) / 880));
+
+}
+
+/* ++ Next & Previous Controls ++*/
+
+/* Don't display the checkbox */
+input[type="checkbox"] {
+  display: none;
+  position: absolute;
+  left: 50vw;
+}
+#next-arrow:checked ~ .category {
+  /*display: none;*/
+  left: -100vw;
+  transition: 1s;
+}
+
+#prev-arrow:checked ~ .category {
+  /*display: grid;*/
+  left: 0;
+  transition: 1s;
+}
+
+/* Arrow styles */
+.arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 6em;
+  background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  padding: .5rem .2rem;
+  text-align: center;
+  z-index: 15;
+  cursor: pointer;
+  transition: .3s;
+
+}
+
+/*Only select the right arrow*/
+.categories .arrows:last-of-type {
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  right: 1%;
+}
+
+.categories .arrows:first-of-type:hover,
+.categories .arrows:last-of-type:hover {
+  font-size: 7em;
+}
+/* ++ End Next & Previous Controls ++*/
+
+/* Show container */
 #shows {
   display: flex;
   flex-wrap: wrap;
-  /*grid-template-columns: repeat(7, 1fr);*/
   justify-content: center;
   align-items: start;
+
+  /*Source: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateZ*/
   perspective: 20em;
   overflow: hidden;
   padding: 0;
 }
 
+/* Single Show style*/
 .show-card {
   flex: 1;
   opacity: 1;
@@ -383,22 +454,48 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+/*Show Image*/
+.show-card img {
+  position:absolute;
+  z-index:0;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 3%;
+}
 
+/* Make everything show up top*/
+.show-card > * {
+  z-index: 1;
+  color: white;
+}
+
+/* On hover & On focus*/
+.show-card:hover, .show-card:focus {
+  flex: 2;
+  box-shadow: 1px 1px 1px black;
+  z-index: 10;
+}
+
+/* Show title*/
 .show-card-header {
   padding: 1rem 0 0 1rem;
   grid-column: span 2;
   font-size: calc(1.5vw + 8 * ((100vw - 20em) / 880));
   text-align: left;
-  text-shadow: 2px 2px 2px rgba(229,9,20,1);
-
+  text-shadow: 2px 2px 2px rgba(0,0,0,1)
 }
+
+/*Show Description*/
 .show-card-description {
   grid-column: span 2;
   max-width: 90%;
   padding-left: 2rem;
   font-size: .5em;
-  text-shadow: 2px 2px 2px rgba(229,9,20,1);
+  text-shadow: 2px 2px 2px rgba(0,0,0,1);
 }
+
+/*Show minimum age*/
 .show-card-age {
   grid-row: 4;
   background-color: white;
@@ -411,6 +508,8 @@ input[type="checkbox"] {
   line-height: 2em;
   margin: 2rem 0 0 2rem;
 }
+
+/*Show genres*/
 .show-card-genres {
   display: flex;
   flex-direction: column;
@@ -436,6 +535,7 @@ input[type="checkbox"] {
   border-bottom: white solid 3px;
 }
 
+/*Show creators*/
 .show-card-creators {
   display: flex;
   flex-direction: column;
@@ -453,113 +553,25 @@ input[type="checkbox"] {
 .show-card-creator-list {
   list-style-type: none;
 }
+
+/* Amount of seasons */
 .show-card-seasons {
   padding: 2rem 0;
   margin: 0 auto;
-}
-.show-card img {
-  position:absolute;
-  z-index:0;
-  height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 3%;
-
-
-}
-.show-card > * {
-  z-index: 1;
-  color: white;
+  text-shadow: 2px 2px 2px rgba(0,0,0,1)
 }
 
-.show-card:hover, .show-card:focus {
-  flex: 2;
-  box-shadow: 1px 1px 1px black;
-  z-index: 10;
-}
 
+/* On click animation*/
 .slide-out {
   /*animation: slide-out 1s cubic-bezier(.22,.04,.59,1.73) forwards;*/
   margin: 0 0 0 0!important;
   animation: slide-out 2s cubic-bezier(.22,.04,.59,1.73)!important;
 }
 
-.arrows {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+/*++++++++++++++++++++++++++++++++++ End Shows +++++++++++++++++++++++++++++++++++++++*/
 
-  color: #fff;
-  text-decoration: none;
-  font-size: 6em;
-  background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-  padding: .5rem .2rem;
-  text-align: center;
-  z-index: 15;
-  cursor: pointer;
-  transition: .3s;
-
-}
-
-.categories .arrows:first-of-type:hover, .categories .arrows:last-of-type:hover {
-  font-size: 7em;
-}
-.categories .arrows:last-of-type {
-  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-  right: 0;
- }
-
-
-.show-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.show-button {
-  width: max-content;
-  height: calc(1em + 8 * ((100vw - 20em) / 880));
-  font-size: calc(0.5em + 8 * ((100vw - 20em) / 880));
-  background-color: rgba(51, 51, 51, 0.4);
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  margin: 0 0.625rem;
-  padding: calc(1.25rem + 8 * ((100vw - 20em) / 880)) calc(1.25rem + 8 * ((100vw - 20em) / 880));
-  border-radius: 5px;
-  transition: 0.5s;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.show-button:hover {
-  background-color: white;
-  color: black;
-  transform: scale(1.05);
-  transition: 0.5s;
-}
-
-.show-button:first-child {
-  margin-left: 0;
-}
-.show-button i {
-  margin-right: 0.625rem;
-}
-.show-season {
-  font-weight: bold;
-  font-size: calc(1rem + 8 * ((100vw - 20em) / 880));
-  margin-bottom: 0.4rem;
-}
-.show-description {
-  font-size: calc(0.5rem + 8 * ((100vw - 20em) / 880));
-  max-width: 80%;
-}
-
-
+/*Advertised show*/
 .advertisement {
   display: flex;
   flex-direction: row;
@@ -567,10 +579,13 @@ input[type="checkbox"] {
   background-size: 100%;
   background-repeat: no-repeat;
 
+  /*Gradient background image*/
   background-image:
           linear-gradient(to top, rgba(17,17,17,1), rgba(17,17,17,0.7), rgba(17,17,17,1)),
           url(../media/images/billgates.jpeg);
 }
+
+/*Image container*/
 .main-image {
   display: flex;
   justify-content: center;
@@ -581,6 +596,7 @@ input[type="checkbox"] {
   width: 75%;
 }
 
+/*Show Content container*/
 .main-info {
   display: flex;
   flex-direction: column;
@@ -595,6 +611,8 @@ input[type="checkbox"] {
 .main-info h2:last-child {
   font-size: 2em;
 }
+
+/*Only select the content in main-info*/
 .main-info .show-buttons {
   flex-direction: row;
   flex-wrap: wrap;
@@ -607,7 +625,7 @@ input[type="checkbox"] {
   width: 70%;
 }
 
-/*@@@@@@@@@@@@@@@@@@@@ Start Detail page @@@@@@@@@@@@@@@@@@@@@@*/
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Detail page @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
 .fullscreen-video {
   position: fixed;
@@ -617,6 +635,8 @@ input[type="checkbox"] {
   min-height: 100%;
   animation: slide-in 1s cubic-bezier(0,.67,.38,1.01) forwards;
 }
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ End Detail page @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
 /*############## Contact Page ################*/
 .contact-main {
@@ -770,6 +790,7 @@ label[for="onderwerp"] {
   margin-bottom: -12.5rem;
 }
 
+/* Lasers!*/
 .lasers {
   width: 100vw;
   height: 68vh;
@@ -815,6 +836,7 @@ label[for="onderwerp"] {
   top: 52.3%;
   perspective: 5.5cm;
 }
+/*Lasers End*/
 
 .pagination {
   animation: pagination-transition 500ms cubic-bezier(1,.11,.14,1.22) forwards!important;
